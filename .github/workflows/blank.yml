@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest]  
+#        os: [windows-latest, ubuntu-latest]  
         include:
         - os: ubuntu-latest
         - os1: windows-latest
