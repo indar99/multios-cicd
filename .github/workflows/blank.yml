@@ -18,7 +18,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, ubuntu-latest]
+        os: [macos-latest, ubuntu-latest]
         include:
         - os: macos-latest
           TARGET: x86_64-apple-darwin
@@ -26,7 +26,7 @@ jobs:
           LINKER: clang
 
         - os: ubuntu-latest
-          TARGET: docker pull nginx:latest
+          run: docker pull nginx:latest
       
       
 
