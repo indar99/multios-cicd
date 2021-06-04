@@ -41,7 +41,8 @@ jobs:
       - name: run docker pull
         run: | 
           docker pull nginx:latest
-  build:
+  
+  
     strategy:
       matrix:
         os: [ windows-latest]
