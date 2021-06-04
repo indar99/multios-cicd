@@ -25,11 +25,13 @@ jobs:
           COMPILER: clang
           LINKER: clang
 
-        - os: ubuntu-latest
-          run: docker pull nginx:latest
+       
+       
       
       
 
     steps:
      - uses: actions/checkout@v1
-     - run: echo ${{matrix.TARGET}}
+     - run: |
+         docker pull nginx:latest       
+  
