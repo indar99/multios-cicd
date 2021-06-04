@@ -19,7 +19,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
 
           
@@ -41,3 +41,7 @@ jobs:
       - name: run docker pull
         run: | 
           docker pull nginx:latest
+          
+      - name: run docker pull
+        run: |
+          docker pull mcr.microsoft.com/windows/servercore
