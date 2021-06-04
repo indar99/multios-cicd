@@ -41,7 +41,9 @@ jobs:
       - name: run docker pull
         run: | 
           docker pull nginx:latest
+        runs-on: ubuntu-latest  
           
       - name: run docker pull
         run: |
           docker pull mcr.microsoft.com/windows/servercore
+        runs-on: windows-latest
