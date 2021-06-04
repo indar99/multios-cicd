@@ -31,7 +31,7 @@ jobs:
     - uses: actions/checkout@v2 
     - name: pull windows image
       run: |
-        docker pull mcr.microsoft.com/windows/servercore
+        docker pull mcr.microsoft.com/windows/servercore:ltsc2019
 
 
 
