@@ -22,11 +22,17 @@ jobs:
         os: [windows-latest, ubuntu-latest]  
         include:
         - os: ubuntu-latest
+        - os1: windows-latest
 
     steps:
-      - name: Echo site details
+      - name: pull nginx image
         env:
           os: ${{ matrix.os }}
-        run: docker pull nginx     
+        run: docker pull nginx   
+        
+      - name: pull win iis image
+        env:
+          os1: ${{ matrix.os1 }}
+        run: docker pull mcr.microsoft.com/windows/servercore
 
   
