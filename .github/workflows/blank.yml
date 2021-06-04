@@ -19,14 +19,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest]      
+        os: [windows-latest, ubuntu-latest]  
+        include:
+        - os: ubuntu-latest
 
     steps:
-     - uses: actions/checkout@v1
-     - run: |
-         docker pull nginx:latest       
-         
-     - name: windows 
-       run: |
-         docker pull mcr.microsoft.com/windows/servercore
+      - name: Echo site details
+        env:
+          os: ${{ matrix.os }}
+        run: docker pull nginx     
+
   
