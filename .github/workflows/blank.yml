@@ -22,7 +22,16 @@ jobs:
     - name: pull nginx image
       run: |
         docker pull nginx   
-        
+      
+  
+  build_web_app2:
+    name: Build WebApp2
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2 
+    - name: pull windows image
+      run: |
+        docker pull mcr.microsoft.com/windows/servercore
 
 
 
