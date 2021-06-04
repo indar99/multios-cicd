@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, ubuntu-latest]
+        include:
+        - os: macos-latest
+          TARGET: x86_64-apple-darwin
+          COMPILER: clang
+          LINKER: clang
+
+        - os: ubuntu-latest
+          TARGET: armv7-unknown-linux-musleabihf
+          COMPILER: arm-linux-gnueabihf-gcc-5
+          LINKER: gcc-5-arm-linux-gnueabihf
+
+        - os: ubuntu-latest
+          TARGET: x86_64-unknown-linux-musl
+          COMPILER: gcc
+          LINKER: gcc
+    steps:
+     - uses: actions/checkout@v1
+     - run: echo ${{matrix.TARGET}}
