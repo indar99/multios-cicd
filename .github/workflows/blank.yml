@@ -15,7 +15,7 @@ env:
   GKE_CLUSTER: cluster-1    # TODO: update to cluster name
   GKE_ZONE: us-central1-c # TODO: update to cluster zone
   DEPLOYMENT_NAME: mydep # TODO: update to deployment name
-  IMAGE: gke-nginxapp-image10
+  IMAGE: gke-nginxapp-image11
   TAG: 1.0.0
 
 
